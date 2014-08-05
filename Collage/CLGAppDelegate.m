@@ -7,6 +7,9 @@
 //
 
 #import "CLGAppDelegate.h"
+#import "CLGRequester.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation CLGAppDelegate
 
@@ -16,6 +19,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [[[[CLGRequester alloc] init] bestPhotosForUesr:@"nature"] subscribeNext:^(RACSequence *medias) {
+        NSLog(@"%@", medias.array);
+    }];
     return YES;
 }
 
