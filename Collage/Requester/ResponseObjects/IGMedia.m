@@ -18,7 +18,7 @@
         _id = dict[@"id"];
         _type = [self mediaTypeFromString:dict[@"type"]];
         
-        NSDictionary *likes = likes[@"likes"];
+        NSDictionary *likes = dict[@"likes"];
         if (likes) {
             _likesCount = [likes[@"count"] intValue];
         }

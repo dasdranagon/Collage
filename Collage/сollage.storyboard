@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AdW-ha-JLi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lfM-ZD-fNs">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="AdW-ha-JLi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GxZ-4c-gAO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mbc-fd-enq" kind="relationship" relationship="rootViewController" id="YdD-gP-TEI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pk9-k1-Vzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5" y="36"/>
+        </scene>
+        <!--Select User Controller - Select user-->
+        <scene sceneID="KxC-yu-rEO">
+            <objects>
+                <viewController id="Mbc-fd-enq" customClass="CLGSelectUserController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ksy-RN-84m"/>
+                        <viewControllerLayoutGuide type="bottom" id="IN0-Sl-E0C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Trc-9M-VTr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select user" id="V5X-0v-lnf">
+                        <barButtonItem key="rightBarButtonItem" title="go" id="8Nw-fv-Nas">
+                            <connections>
+                                <segue destination="e2s-A0-MbE" kind="push" id="fY4-Wc-f2v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxY-Vj-p5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="36"/>
+        </scene>
+        <!--Image Picker Controller - Picker-->
+        <scene sceneID="kDx-NT-gRL">
+            <objects>
+                <viewController id="e2s-A0-MbE" customClass="CLGImagePickerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYG-Wy-aq5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ec0-hD-ZQH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h6B-pS-4yf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Picker" id="UWF-ad-Q9Y">
+                        <barButtonItem key="rightBarButtonItem" title="next" id="ceP-3i-9Sd">
+                            <connections>
+                                <segue destination="p6y-c8-Ouy" kind="push" id="Ld4-Nv-plJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5eR-d1-jQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="36"/>
+        </scene>
+        <!--Collage Controller - Collage-->
+        <scene sceneID="MIX-4w-ARb">
+            <objects>
+                <viewController id="p6y-c8-Ouy" customClass="CLGCollageController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fnX-zB-aJ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="cKD-AQ-e9h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bHd-sq-lZd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Collage" id="cpf-4I-soP">
+                        <barButtonItem key="rightBarButtonItem" title="Print" id="wGF-Qu-0gW"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCq-r7-7g1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="36"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

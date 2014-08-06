@@ -19,12 +19,23 @@
 		6B075B0E1991023E00E61BEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B075AF31991023E00E61BEA /* Foundation.framework */; };
 		6B075B0F1991023E00E61BEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B075AF71991023E00E61BEA /* UIKit.framework */; };
 		6B075B171991023E00E61BEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B151991023E00E61BEA /* InfoPlist.strings */; };
-		6B075B191991023E00E61BEA /* CollageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B181991023E00E61BEA /* CollageTests.m */; };
 		6B075B28199127A300E61BEA /* CLGRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B27199127A300E61BEA /* CLGRequester.m */; };
 		6B075B2C199129D300E61BEA /* IGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B2B199129D300E61BEA /* IGUser.m */; };
 		6B075B2F19912A0300E61BEA /* IGMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B2E19912A0300E61BEA /* IGMedia.m */; };
 		6B075B321991338800E61BEA /* IGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B311991338800E61BEA /* IGImage.m */; };
 		6B075B3619914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B3519914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.m */; };
+		6B075B381991E0D900E61BEA /* сollage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B371991E0D900E61BEA /* сollage.storyboard */; };
+		6B075B3C199214A400E61BEA /* CLGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B3B199214A400E61BEA /* CLGViewModel.m */; };
+		6B075B3F199214CB00E61BEA /* CLGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B3E199214CB00E61BEA /* CLGViewController.m */; };
+		6B075B431992293C00E61BEA /* OCMockObject+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B421992293C00E61BEA /* OCMockObject+ReactiveCocoa.m */; };
+		6B075B4519922AE500E61BEA /* CLGViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B4419922AE500E61BEA /* CLGViewControllerTests.m */; };
+		6B075B4919922C2800E61BEA /* CLGSelectUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B4819922C2800E61BEA /* CLGSelectUserController.m */; };
+		6B075B4D19922C9000E61BEA /* CLGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B4C19922C9000E61BEA /* CLGImagePickerController.m */; };
+		6B075B5119922D3000E61BEA /* CLGCollageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5019922D3000E61BEA /* CLGCollageController.m */; };
+		6B075B5419922DA600E61BEA /* CLGSelectUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5319922DA600E61BEA /* CLGSelectUserViewModel.m */; };
+		6B075B5719922E0300E61BEA /* CLGImagePickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */; };
+		6B075B5A19922E1900E61BEA /* CLGCollageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */; };
+		C44CD9A8DAC045E5BBC20A4F /* libPods-CollageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D0306095184D8589647BF0 /* libPods-CollageTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +64,6 @@
 		6B075B0C1991023E00E61BEA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6B075B141991023E00E61BEA /* CollageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollageTests-Info.plist"; sourceTree = "<group>"; };
 		6B075B161991023E00E61BEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6B075B181991023E00E61BEA /* CollageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollageTests.m; sourceTree = "<group>"; };
 		6B075B26199127A300E61BEA /* CLGRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGRequester.h; sourceTree = "<group>"; };
 		6B075B27199127A300E61BEA /* CLGRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGRequester.m; sourceTree = "<group>"; };
 		6B075B2A199129D300E61BEA /* IGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGUser.h; sourceTree = "<group>"; };
@@ -64,8 +74,30 @@
 		6B075B311991338800E61BEA /* IGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGImage.m; sourceTree = "<group>"; };
 		6B075B3419914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+RACInstagram.h"; sourceTree = "<group>"; };
 		6B075B3519914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+RACInstagram.m"; sourceTree = "<group>"; };
+		6B075B371991E0D900E61BEA /* сollage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "сollage.storyboard"; sourceTree = "<group>"; };
+		6B075B3A199214A400E61BEA /* CLGViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGViewModel.h; sourceTree = "<group>"; };
+		6B075B3B199214A400E61BEA /* CLGViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGViewModel.m; sourceTree = "<group>"; };
+		6B075B3D199214CB00E61BEA /* CLGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGViewController.h; sourceTree = "<group>"; };
+		6B075B3E199214CB00E61BEA /* CLGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGViewController.m; sourceTree = "<group>"; };
+		6B075B411992293C00E61BEA /* OCMockObject+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCMockObject+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		6B075B421992293C00E61BEA /* OCMockObject+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCMockObject+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		6B075B4419922AE500E61BEA /* CLGViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGViewControllerTests.m; sourceTree = "<group>"; };
+		6B075B4719922C2800E61BEA /* CLGSelectUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSelectUserController.h; sourceTree = "<group>"; };
+		6B075B4819922C2800E61BEA /* CLGSelectUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSelectUserController.m; sourceTree = "<group>"; };
+		6B075B4B19922C9000E61BEA /* CLGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGImagePickerController.h; sourceTree = "<group>"; };
+		6B075B4C19922C9000E61BEA /* CLGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImagePickerController.m; sourceTree = "<group>"; };
+		6B075B4F19922D3000E61BEA /* CLGCollageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCollageController.h; sourceTree = "<group>"; };
+		6B075B5019922D3000E61BEA /* CLGCollageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCollageController.m; sourceTree = "<group>"; };
+		6B075B5219922DA600E61BEA /* CLGSelectUserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSelectUserViewModel.h; sourceTree = "<group>"; };
+		6B075B5319922DA600E61BEA /* CLGSelectUserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSelectUserViewModel.m; sourceTree = "<group>"; };
+		6B075B5519922E0300E61BEA /* CLGImagePickerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGImagePickerViewModel.h; sourceTree = "<group>"; };
+		6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImagePickerViewModel.m; sourceTree = "<group>"; };
+		6B075B5819922E1900E61BEA /* CLGCollageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCollageViewModel.h; sourceTree = "<group>"; };
+		6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCollageViewModel.m; sourceTree = "<group>"; };
 		C8782F699D7842D0B07B1596 /* libPods-Collage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Collage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D0306095184D8589647BF0 /* libPods-CollageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1B2982127842D99156916C /* Pods-Collage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collage.xcconfig"; path = "Pods/Pods-Collage.xcconfig"; sourceTree = "<group>"; };
+		F14B2C5221274D00945590A4 /* Pods-CollageTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollageTests.xcconfig"; path = "Pods/Pods-CollageTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +119,7 @@
 				6B075B0D1991023E00E61BEA /* XCTest.framework in Frameworks */,
 				6B075B0F1991023E00E61BEA /* UIKit.framework in Frameworks */,
 				6B075B0E1991023E00E61BEA /* Foundation.framework in Frameworks */,
+				C44CD9A8DAC045E5BBC20A4F /* libPods-CollageTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +134,7 @@
 				6B075AF21991023E00E61BEA /* Frameworks */,
 				6B075AF11991023E00E61BEA /* Products */,
 				CD1B2982127842D99156916C /* Pods-Collage.xcconfig */,
+				F14B2C5221274D00945590A4 /* Pods-CollageTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +155,7 @@
 				6B075AF71991023E00E61BEA /* UIKit.framework */,
 				6B075B0C1991023E00E61BEA /* XCTest.framework */,
 				C8782F699D7842D0B07B1596 /* libPods-Collage.a */,
+				C9D0306095184D8589647BF0 /* libPods-CollageTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,11 +163,16 @@
 		6B075AF91991023E00E61BEA /* Collage */ = {
 			isa = PBXGroup;
 			children = (
+				6B075B4E19922CAE00E61BEA /* CollageController */,
+				6B075B4A19922C3800E61BEA /* ImagePickerController */,
+				6B075B4619922BCC00E61BEA /* SelectUserController */,
+				6B075B39199213E100E61BEA /* BaseController */,
 				6B075B22199114B600E61BEA /* Requester */,
 				6B075B021991023E00E61BEA /* CLGAppDelegate.h */,
 				6B075B031991023E00E61BEA /* CLGAppDelegate.m */,
 				6B075B051991023E00E61BEA /* Images.xcassets */,
 				6B075AFA1991023E00E61BEA /* Supporting Files */,
+				6B075B371991E0D900E61BEA /* сollage.storyboard */,
 			);
 			path = Collage;
 			sourceTree = "<group>";
@@ -151,7 +191,8 @@
 		6B075B121991023E00E61BEA /* CollageTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B075B181991023E00E61BEA /* CollageTests.m */,
+				6B075B40199228EB00E61BEA /* Extended */,
+				6B075B4419922AE500E61BEA /* CLGViewControllerTests.m */,
 				6B075B131991023E00E61BEA /* Supporting Files */,
 			);
 			path = CollageTests;
@@ -191,6 +232,59 @@
 			path = ResponseObjects;
 			sourceTree = "<group>";
 		};
+		6B075B39199213E100E61BEA /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B3A199214A400E61BEA /* CLGViewModel.h */,
+				6B075B3B199214A400E61BEA /* CLGViewModel.m */,
+				6B075B3D199214CB00E61BEA /* CLGViewController.h */,
+				6B075B3E199214CB00E61BEA /* CLGViewController.m */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		6B075B40199228EB00E61BEA /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B411992293C00E61BEA /* OCMockObject+ReactiveCocoa.h */,
+				6B075B421992293C00E61BEA /* OCMockObject+ReactiveCocoa.m */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		6B075B4619922BCC00E61BEA /* SelectUserController */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B4719922C2800E61BEA /* CLGSelectUserController.h */,
+				6B075B4819922C2800E61BEA /* CLGSelectUserController.m */,
+				6B075B5219922DA600E61BEA /* CLGSelectUserViewModel.h */,
+				6B075B5319922DA600E61BEA /* CLGSelectUserViewModel.m */,
+			);
+			path = SelectUserController;
+			sourceTree = "<group>";
+		};
+		6B075B4A19922C3800E61BEA /* ImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B4B19922C9000E61BEA /* CLGImagePickerController.h */,
+				6B075B4C19922C9000E61BEA /* CLGImagePickerController.m */,
+				6B075B5519922E0300E61BEA /* CLGImagePickerViewModel.h */,
+				6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */,
+			);
+			path = ImagePickerController;
+			sourceTree = "<group>";
+		};
+		6B075B4E19922CAE00E61BEA /* CollageController */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B4F19922D3000E61BEA /* CLGCollageController.h */,
+				6B075B5019922D3000E61BEA /* CLGCollageController.m */,
+				6B075B5819922E1900E61BEA /* CLGCollageViewModel.h */,
+				6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */,
+			);
+			path = CollageController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B075B1F1991023E00E61BEA /* Build configuration list for PBXNativeTarget "CollageTests" */;
 			buildPhases = (
+				743CBCB6F46C4594A5F021BB /* Check Pods Manifest.lock */,
 				6B075B071991023E00E61BEA /* Sources */,
 				6B075B081991023E00E61BEA /* Frameworks */,
 				6B075B091991023E00E61BEA /* Resources */,
+				CF0E385EC2D34ED7ABBC3979 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +367,7 @@
 			files = (
 				6B075AFE1991023E00E61BEA /* InfoPlist.strings in Resources */,
 				6B075B061991023E00E61BEA /* Images.xcassets in Resources */,
+				6B075B381991E0D900E61BEA /* сollage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +382,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		743CBCB6F46C4594A5F021BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		7CFEE0639CED4E73B0D8EBD1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +427,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CF0E385EC2D34ED7ABBC3979 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CollageTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,10 +451,18 @@
 			files = (
 				6B075B001991023E00E61BEA /* main.m in Sources */,
 				6B075B2C199129D300E61BEA /* IGUser.m in Sources */,
+				6B075B5419922DA600E61BEA /* CLGSelectUserViewModel.m in Sources */,
 				6B075B321991338800E61BEA /* IGImage.m in Sources */,
+				6B075B4919922C2800E61BEA /* CLGSelectUserController.m in Sources */,
+				6B075B5A19922E1900E61BEA /* CLGCollageViewModel.m in Sources */,
+				6B075B3F199214CB00E61BEA /* CLGViewController.m in Sources */,
+				6B075B3C199214A400E61BEA /* CLGViewModel.m in Sources */,
 				6B075B3619914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.m in Sources */,
 				6B075B041991023E00E61BEA /* CLGAppDelegate.m in Sources */,
+				6B075B5719922E0300E61BEA /* CLGImagePickerViewModel.m in Sources */,
 				6B075B28199127A300E61BEA /* CLGRequester.m in Sources */,
+				6B075B4D19922C9000E61BEA /* CLGImagePickerController.m in Sources */,
+				6B075B5119922D3000E61BEA /* CLGCollageController.m in Sources */,
 				6B075B2F19912A0300E61BEA /* IGMedia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +471,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B075B191991023E00E61BEA /* CollageTests.m in Sources */,
+				6B075B431992293C00E61BEA /* OCMockObject+ReactiveCocoa.m in Sources */,
+				6B075B4519922AE500E61BEA /* CLGViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +606,7 @@
 		};
 		6B075B201991023E00E61BEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14B2C5221274D00945590A4 /* Pods-CollageTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Collage.app/Collage";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -492,6 +629,7 @@
 		};
 		6B075B211991023E00E61BEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14B2C5221274D00945590A4 /* Pods-CollageTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Collage.app/Collage";
 				FRAMEWORK_SEARCH_PATHS = (

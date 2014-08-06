@@ -8,7 +8,7 @@ target "Collage" do
         pod 'AFNetworking', '~> 2.2'
 end
 
-target "Collage" do
+target "CollageTests" do
         pod 'Specta', '~> 0.2.1'
         pod 'Expecta', '~> 0.2.4'
         pod 'OCMock', '~> 2.2.0'
