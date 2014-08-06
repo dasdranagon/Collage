@@ -13,5 +13,6 @@
 extern NSString * const kCLGRequestErrorDomain;
 
 @interface CLGRequester : NSObject
++ (CLGRequester *)sharedInstance;
 - (RACSignal *)bestPhotosForUesr:(NSString *)userName;
 @end

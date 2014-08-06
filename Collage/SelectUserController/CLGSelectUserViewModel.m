@@ -7,7 +7,23 @@
 //
 
 #import "CLGSelectUserViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation CLGSelectUserViewModel
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        NSRegularExpression *regExt = [NSRegularExpression regularExpressionWithPattern:@"^[a-zA-Z0-9_]*$" options:0 error:nil];
+
+        RAC(self, validName) = [RACObserve(self, name) map:^id(NSString *value) {
+            return @( (value.length > 3) && (value.length < 40) &&
+            ([regExt firstMatchInString:value options:0 range:NSMakeRange(0, [value length])].range.length == value.length)
+            );
+        }];
+    }
+    return self;
+}
 
 @end

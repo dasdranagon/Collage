@@ -8,6 +8,14 @@
 
 #import "CLGViewModel.h"
 
+@class RACCommand;
+
 @interface CLGSelectUserViewModel : CLGViewModel
+
+//  inputs
+@property (nonatomic, strong) NSString *name;
+
+//  outputs
+@property (nonatomic) BOOL validName;
 
 @end

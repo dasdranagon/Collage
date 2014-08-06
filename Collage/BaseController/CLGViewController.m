@@ -22,8 +22,6 @@
 {
     [super viewDidLoad];
     
-    self.viewModel = [self createViewModel];
-    
     if (self.viewModel) {
         self.viewModel.active = YES;
         [[RACObserve(self.viewModel, alert) filter:^BOOL(id value) {
@@ -46,11 +44,6 @@
             }
         }];
     }
-}
-
-- (CLGViewModel *)createViewModel
-{
-    return nil;
 }
 
 - (void)dealloc

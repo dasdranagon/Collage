@@ -8,33 +8,34 @@
 
 #import "CLGSelectUserController.h"
 #import "CLGSelectUserViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface CLGSelectUserController ()
+@interface CLGSelectUserController () <UITextFieldDelegate>
 @property (nonatomic, strong) CLGSelectUserViewModel *viewModel;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextfield;
 @end
 
 @implementation CLGSelectUserController
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.viewModel = [[CLGSelectUserViewModel alloc] init];
+}
+
 - (void)viewDidLoad
 {
+    NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    RAC(self.viewModel, name) = self.userNameTextfield.rac_textSignal;
+    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.viewModel, validName);
 }
 
-- (CLGViewModel *)createViewModel
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    return [[CLGSelectUserViewModel alloc] init];
+    [textField resignFirstResponder];
+    return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -12,5 +12,4 @@
 
 @interface CLGViewController : UIViewController
 @property (nonatomic, strong) CLGViewModel *viewModel;
-- (CLGViewModel *)createViewModel;
 @end

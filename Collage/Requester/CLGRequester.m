@@ -23,6 +23,16 @@ NSString * const kCLGRequestErrorDomain = @"CLGRequestErrorDomain";
 
 @implementation CLGRequester
 
++ (CLGRequester *)sharedInstance
+{
+    static CLGRequester *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[CLGRequester alloc] init];
+    });
+    return sharedInstance;
+}
+
 - (id)init
 {
     self = [super init];

@@ -30,15 +30,37 @@
                     <view key="view" contentMode="scaleToFill" id="Trc-9M-VTr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yb0-cg-sgL">
+                                <rect key="frame" x="9" y="71" width="303" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cZ3-qX-02h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Mbc-fd-enq" id="j7P-Ht-Psp"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yb0-cg-sgL" firstAttribute="leading" secondItem="Trc-9M-VTr" secondAttribute="leading" constant="9" id="1PD-u0-SeN"/>
+                            <constraint firstAttribute="trailing" secondItem="yb0-cg-sgL" secondAttribute="trailing" constant="8" id="LDo-4O-Whu"/>
+                            <constraint firstItem="yb0-cg-sgL" firstAttribute="top" secondItem="ksy-RN-84m" secondAttribute="bottom" constant="7" id="r2h-VJ-u8p"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select user" id="V5X-0v-lnf">
-                        <barButtonItem key="rightBarButtonItem" title="go" id="8Nw-fv-Nas">
+                        <barButtonItem key="rightBarButtonItem" title="next" id="c4q-fO-UD2">
                             <connections>
-                                <segue destination="e2s-A0-MbE" kind="push" id="fY4-Wc-f2v"/>
+                                <segue destination="e2s-A0-MbE" kind="push" id="j34-Rd-Efl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userNameTextfield" destination="yb0-cg-sgL" id="LUB-JS-00W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxY-Vj-p5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

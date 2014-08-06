@@ -17,13 +17,9 @@
 
 - (void)viewDidLoad
 {
+    NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (CLGViewModel *)createViewModel
-{
-    return [[CLGImagePickerViewModel alloc] init];
 }
 
 /*

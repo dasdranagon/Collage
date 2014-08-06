@@ -6,14 +6,14 @@
 //
 //
 
-#import "Specta.h"
+#import <Specta/Specta.h>
 #import <OCMock/OCMock.h>
 #import "OCMockObject+ReactiveCocoa.h"
 
 #import "CLGViewController.h"
 #import "CLGViewModel.h"
 
-SpecBegin(FGFBaseViewController)
+SpecBegin(CLGViewController)
 
 __block CLGViewController *controller;
 __block id viewModelMoc;
@@ -24,7 +24,7 @@ beforeEach(^{
     controller.viewModel = viewModelMoc;
 });
 
-describe(@"FGFBaseViewController", ^{
+describe(@"CLGViewController", ^{
     it(@"should activate model in viewDoidLoad method", ^{
         [[viewModelMoc expect] setActive:YES];
         [controller viewDidLoad];
