@@ -7,9 +7,6 @@
 //
 
 #import "CLGAppDelegate.h"
-#import "CLGRequester.h"
-
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation CLGAppDelegate
 
@@ -21,11 +18,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    static CLGRequester *requester = nil;
-    requester = [[CLGRequester alloc] init];
-    [[requester bestPhotosForUesr:@"nature"] subscribeNext:^(RACSequence *medias) {
-        NSLog(@"%@", medias.array);
-    }];
     return YES;
 }
 

@@ -8,8 +8,16 @@
 
 #import "CLGImagePickerController.h"
 #import "CLGImagePickerViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import "CLGImageCell.h"
+#import "IGMedia.h"
+#import "IGImage.h"
 
-@interface CLGImagePickerController ()
+static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
+
+@interface CLGImagePickerController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) CLGImagePickerViewModel *viewModel;
 @end
 
@@ -19,7 +27,44 @@
 {
     NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  
+    @weakify(self);
+    [_collectionView registerNib:[UINib nibWithNibName:@"CLGImageCell" bundle:nil] forCellWithReuseIdentifier:kImageCellIdentifier];
+    [[RACObserve(self.viewModel, images) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.collectionView reloadData];
+    }];
+}
+
+#pragma mark -- UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.viewModel.images.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CLGImageCell *cell = (CLGImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kImageCellIdentifier
+                                                                           forIndexPath:indexPath];
+    
+    IGMedia *media = self.viewModel.images[indexPath.row];
+    [cell setImageUrl:media.thumbnail.url];
+    [cell setChecked:[self.viewModel.selectedIndexs containsIndex:indexPath.row]];
+    return cell;
+}
+
+#pragma mark -- UICollectionViewDelegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(100, 100);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.viewModel toggleIndex:indexPath.row];
+    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
 }
 
 /*

@@ -24,9 +24,9 @@
     
     if (self.viewModel) {
         self.viewModel.active = YES;
-        [[RACObserve(self.viewModel, alert) filter:^BOOL(id value) {
+        [[[RACObserve(self.viewModel, alert) filter:^BOOL(id value) {
             return value != nil;
-        }] subscribeNext:^(NSString *alert) {
+        }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSString *alert) {
             [[[UIAlertView alloc] initWithTitle:nil message:alert delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
         }];
         

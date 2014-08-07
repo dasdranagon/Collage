@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qtj-0F-vUu" customClass="CLGImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dc2-NU-mvL">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="szh-QF-anN">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dc2-NU-mvL" secondAttribute="bottom" id="1hM-yM-Ggo"/>
+                <constraint firstItem="szh-QF-anN" firstAttribute="leading" secondItem="qtj-0F-vUu" secondAttribute="leading" id="4vp-gw-kP3"/>
+                <constraint firstAttribute="trailing" secondItem="szh-QF-anN" secondAttribute="trailing" id="8rA-HK-ACf"/>
+                <constraint firstAttribute="bottom" secondItem="szh-QF-anN" secondAttribute="bottom" id="GKH-1f-43R"/>
+                <constraint firstItem="dc2-NU-mvL" firstAttribute="leading" secondItem="qtj-0F-vUu" secondAttribute="leading" id="HUC-9h-xpf"/>
+                <constraint firstItem="szh-QF-anN" firstAttribute="top" secondItem="qtj-0F-vUu" secondAttribute="top" id="JWT-G4-RjJ"/>
+                <constraint firstItem="dc2-NU-mvL" firstAttribute="top" secondItem="qtj-0F-vUu" secondAttribute="top" id="n3O-in-U3C"/>
+                <constraint firstAttribute="trailing" secondItem="dc2-NU-mvL" secondAttribute="trailing" id="nlS-RC-n74"/>
+            </constraints>
+            <size key="customSize" width="90" height="85"/>
+            <connections>
+                <outlet property="checkImage" destination="szh-QF-anN" id="BCt-sK-PAU"/>
+                <outlet property="image" destination="dc2-NU-mvL" id="wxi-g0-dNc"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="check" width="48" height="48"/>
+    </resources>
+</document>

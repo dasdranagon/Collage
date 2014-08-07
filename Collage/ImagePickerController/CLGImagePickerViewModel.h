@@ -8,6 +8,21 @@
 
 #import "CLGViewModel.h"
 
-@interface CLGImagePickerViewModel : CLGViewModel
+@class CLGRequester;
 
+@interface CLGImagePickerViewModel : CLGViewModel
+- (instancetype)initWidthRequester:(CLGRequester *)requester;
+
+//  inputs
+- (void)toggleIndex:(NSInteger)index;
+@property (nonatomic, strong) NSString *userName;
+
+//  outputs
+@property (nonatomic, strong) NSArray *images;
+- (NSIndexSet *)selectedIndexs;
+
+@end
+
+@interface CLGImagePickerViewModel(unavailiable)
+- (id)init __AVAILABILITY_INTERNAL_UNAVAILABLE;
 @end

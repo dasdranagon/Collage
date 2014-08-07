@@ -36,6 +36,9 @@
 		6B075B5719922E0300E61BEA /* CLGImagePickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */; };
 		6B075B5A19922E1900E61BEA /* CLGCollageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */; };
 		6B075B5C1992542C00E61BEA /* CLGSelectUserViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5B1992542C00E61BEA /* CLGSelectUserViewModelTests.m */; };
+		6B075B5E1992700400E61BEA /* CLGImagePickerViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */; };
+		6B075B6119927FC600E61BEA /* CLGImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B6019927FC600E61BEA /* CLGImageCell.m */; };
+		6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B6219927FE700E61BEA /* CLGImageCell.xib */; };
 		C44CD9A8DAC045E5BBC20A4F /* libPods-CollageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D0306095184D8589647BF0 /* libPods-CollageTests.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,10 @@
 		6B075B5819922E1900E61BEA /* CLGCollageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCollageViewModel.h; sourceTree = "<group>"; };
 		6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCollageViewModel.m; sourceTree = "<group>"; };
 		6B075B5B1992542C00E61BEA /* CLGSelectUserViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSelectUserViewModelTests.m; sourceTree = "<group>"; };
+		6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImagePickerViewModelTests.m; sourceTree = "<group>"; };
+		6B075B5F19927FC600E61BEA /* CLGImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGImageCell.h; sourceTree = "<group>"; };
+		6B075B6019927FC600E61BEA /* CLGImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImageCell.m; sourceTree = "<group>"; };
+		6B075B6219927FE700E61BEA /* CLGImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLGImageCell.xib; sourceTree = "<group>"; };
 		C8782F699D7842D0B07B1596 /* libPods-Collage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Collage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D0306095184D8589647BF0 /* libPods-CollageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1B2982127842D99156916C /* Pods-Collage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collage.xcconfig"; path = "Pods/Pods-Collage.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +203,7 @@
 				6B075B40199228EB00E61BEA /* Extended */,
 				6B075B4419922AE500E61BEA /* CLGViewControllerTests.m */,
 				6B075B5B1992542C00E61BEA /* CLGSelectUserViewModelTests.m */,
+				6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */,
 				6B075B131991023E00E61BEA /* Supporting Files */,
 			);
 			path = CollageTests;
@@ -273,6 +281,9 @@
 				6B075B4C19922C9000E61BEA /* CLGImagePickerController.m */,
 				6B075B5519922E0300E61BEA /* CLGImagePickerViewModel.h */,
 				6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */,
+				6B075B5F19927FC600E61BEA /* CLGImageCell.h */,
+				6B075B6019927FC600E61BEA /* CLGImageCell.m */,
+				6B075B6219927FE700E61BEA /* CLGImageCell.xib */,
 			);
 			path = ImagePickerController;
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 			files = (
 				6B075AFE1991023E00E61BEA /* InfoPlist.strings in Resources */,
 				6B075B061991023E00E61BEA /* Images.xcassets in Resources */,
+				6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */,
 				6B075B381991E0D900E61BEA /* collage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +466,7 @@
 			files = (
 				6B075B001991023E00E61BEA /* main.m in Sources */,
 				6B075B2C199129D300E61BEA /* IGUser.m in Sources */,
+				6B075B6119927FC600E61BEA /* CLGImageCell.m in Sources */,
 				6B075B5419922DA600E61BEA /* CLGSelectUserViewModel.m in Sources */,
 				6B075B321991338800E61BEA /* IGImage.m in Sources */,
 				6B075B4919922C2800E61BEA /* CLGSelectUserController.m in Sources */,
@@ -477,6 +490,7 @@
 				6B075B431992293C00E61BEA /* OCMockObject+ReactiveCocoa.m in Sources */,
 				6B075B4519922AE500E61BEA /* CLGViewControllerTests.m in Sources */,
 				6B075B5C1992542C00E61BEA /* CLGSelectUserViewModelTests.m in Sources */,
+				6B075B5E1992700400E61BEA /* CLGImagePickerViewModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

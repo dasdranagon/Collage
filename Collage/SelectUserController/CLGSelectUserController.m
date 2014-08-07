@@ -9,6 +9,10 @@
 #import "CLGSelectUserController.h"
 #import "CLGSelectUserViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CLGRequester.h"
+#import "CLGImagePickerViewModel.h"
+
+static NSString * const kGoToImagePickerSegueIdentifier = @"goToImagePicker";
 
 @interface CLGSelectUserController () <UITextFieldDelegate>
 @property (nonatomic, strong) CLGSelectUserViewModel *viewModel;
@@ -36,6 +40,15 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:kGoToImagePickerSegueIdentifier]){
+        CLGImagePickerViewModel *imgPickerViewModel = [[CLGImagePickerViewModel alloc] initWidthRequester:[CLGRequester sharedInstance]];
+        imgPickerViewModel.userName = self.viewModel.name;
+        ((CLGViewController *)[segue destinationViewController]).viewModel = imgPickerViewModel;
+    }
 }
 
 @end
