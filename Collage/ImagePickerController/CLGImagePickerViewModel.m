@@ -62,6 +62,8 @@
     else{
         [_mutableIndexsList addIndex:index];
     }
+    
+    self.canMakeCollage = (_mutableIndexsList.count > 1) && (_mutableIndexsList.count < 9);
 }
 
 - (NSIndexSet *)selectedIndexs

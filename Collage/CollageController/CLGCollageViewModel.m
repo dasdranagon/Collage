@@ -10,4 +10,15 @@
 
 @implementation CLGCollageViewModel
 
+- (instancetype)initWidthImages:(NSArray *)images
+{
+    self = [super init];
+    
+    if (self) {
+        self.images = images;
+    }
+    
+    return self;
+}
+
 @end

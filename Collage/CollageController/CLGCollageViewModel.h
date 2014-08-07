@@ -9,5 +9,10 @@
 #import "CLGViewModel.h"
 
 @interface CLGCollageViewModel : CLGViewModel
+- (instancetype)initWidthImages:(NSArray *)images;
+@property (nonatomic, strong) NSArray *images;
+@end
 
+@interface CLGCollageViewModel(unavailiable)
+- (id)init __AVAILABILITY_INTERNAL_UNAVAILABLE;
 @end

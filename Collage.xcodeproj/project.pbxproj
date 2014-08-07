@@ -39,6 +39,10 @@
 		6B075B5E1992700400E61BEA /* CLGImagePickerViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */; };
 		6B075B6119927FC600E61BEA /* CLGImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B6019927FC600E61BEA /* CLGImageCell.m */; };
 		6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B6219927FE700E61BEA /* CLGImageCell.xib */; };
+		6B075B661993A8FE00E61BEA /* CLGCollageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B651993A8FE00E61BEA /* CLGCollageCell.m */; };
+		6B075B681993A91D00E61BEA /* CLGCollageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B671993A91D00E61BEA /* CLGCollageCell.xib */; };
+		6B075B751993EAE900E61BEA /* CLGSimpleTileLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */; };
+		6B075B781993EF5500E61BEA /* CLGBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B771993EF5500E61BEA /* CLGBaseLayout.m */; };
 		C44CD9A8DAC045E5BBC20A4F /* libPods-CollageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D0306095184D8589647BF0 /* libPods-CollageTests.a */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +107,13 @@
 		6B075B5F19927FC600E61BEA /* CLGImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGImageCell.h; sourceTree = "<group>"; };
 		6B075B6019927FC600E61BEA /* CLGImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImageCell.m; sourceTree = "<group>"; };
 		6B075B6219927FE700E61BEA /* CLGImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLGImageCell.xib; sourceTree = "<group>"; };
+		6B075B641993A8FE00E61BEA /* CLGCollageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCollageCell.h; sourceTree = "<group>"; };
+		6B075B651993A8FE00E61BEA /* CLGCollageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCollageCell.m; sourceTree = "<group>"; };
+		6B075B671993A91D00E61BEA /* CLGCollageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLGCollageCell.xib; sourceTree = "<group>"; };
+		6B075B731993EAE900E61BEA /* CLGSimpleTileLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSimpleTileLayout.h; sourceTree = "<group>"; };
+		6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSimpleTileLayout.m; sourceTree = "<group>"; };
+		6B075B761993EF5500E61BEA /* CLGBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGBaseLayout.h; sourceTree = "<group>"; };
+		6B075B771993EF5500E61BEA /* CLGBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGBaseLayout.m; sourceTree = "<group>"; };
 		C8782F699D7842D0B07B1596 /* libPods-Collage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Collage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D0306095184D8589647BF0 /* libPods-CollageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1B2982127842D99156916C /* Pods-Collage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collage.xcconfig"; path = "Pods/Pods-Collage.xcconfig"; sourceTree = "<group>"; };
@@ -291,12 +302,27 @@
 		6B075B4E19922CAE00E61BEA /* CollageController */ = {
 			isa = PBXGroup;
 			children = (
+				6B075B691993CAE600E61BEA /* Layouts */,
 				6B075B4F19922D3000E61BEA /* CLGCollageController.h */,
 				6B075B5019922D3000E61BEA /* CLGCollageController.m */,
 				6B075B5819922E1900E61BEA /* CLGCollageViewModel.h */,
 				6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */,
+				6B075B641993A8FE00E61BEA /* CLGCollageCell.h */,
+				6B075B651993A8FE00E61BEA /* CLGCollageCell.m */,
+				6B075B671993A91D00E61BEA /* CLGCollageCell.xib */,
 			);
 			path = CollageController;
+			sourceTree = "<group>";
+		};
+		6B075B691993CAE600E61BEA /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				6B075B731993EAE900E61BEA /* CLGSimpleTileLayout.h */,
+				6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */,
+				6B075B761993EF5500E61BEA /* CLGBaseLayout.h */,
+				6B075B771993EF5500E61BEA /* CLGBaseLayout.m */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +408,7 @@
 				6B075AFE1991023E00E61BEA /* InfoPlist.strings in Resources */,
 				6B075B061991023E00E61BEA /* Images.xcassets in Resources */,
 				6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */,
+				6B075B681993A91D00E61BEA /* CLGCollageCell.xib in Resources */,
 				6B075B381991E0D900E61BEA /* collage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +498,7 @@
 				6B075B321991338800E61BEA /* IGImage.m in Sources */,
 				6B075B4919922C2800E61BEA /* CLGSelectUserController.m in Sources */,
 				6B075B5A19922E1900E61BEA /* CLGCollageViewModel.m in Sources */,
+				6B075B751993EAE900E61BEA /* CLGSimpleTileLayout.m in Sources */,
 				6B075B3F199214CB00E61BEA /* CLGViewController.m in Sources */,
 				6B075B3C199214A400E61BEA /* CLGViewModel.m in Sources */,
 				6B075B3619914DE400E61BEA /* AFHTTPRequestOperationManager+RACInstagram.m in Sources */,
@@ -478,8 +506,10 @@
 				6B075B5719922E0300E61BEA /* CLGImagePickerViewModel.m in Sources */,
 				6B075B28199127A300E61BEA /* CLGRequester.m in Sources */,
 				6B075B4D19922C9000E61BEA /* CLGImagePickerController.m in Sources */,
+				6B075B781993EF5500E61BEA /* CLGBaseLayout.m in Sources */,
 				6B075B5119922D3000E61BEA /* CLGCollageController.m in Sources */,
 				6B075B2F19912A0300E61BEA /* IGMedia.m in Sources */,
+				6B075B661993A8FE00E61BEA /* CLGCollageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

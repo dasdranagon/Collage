@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" title="Picker" id="UWF-ad-Q9Y">
                         <barButtonItem key="rightBarButtonItem" title="next" id="ceP-3i-9Sd">
                             <connections>
-                                <segue destination="p6y-c8-Ouy" kind="push" id="Ld4-Nv-plJ"/>
+                                <segue destination="p6y-c8-Ouy" kind="push" identifier="goToCollageScreen" id="Ld4-Nv-plJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -128,11 +128,33 @@
                     <view key="view" contentMode="scaleToFill" id="bHd-sq-lZd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-EG-DF2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="9Nc-No-TH0"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p6y-c8-Ouy" id="sow-pZ-uCe"/>
+                                    <outlet property="delegate" destination="p6y-c8-Ouy" id="ahz-hU-FZL"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gG8-EG-DF2" firstAttribute="top" secondItem="bHd-sq-lZd" secondAttribute="top" id="Lea-az-jkG"/>
+                            <constraint firstItem="gG8-EG-DF2" firstAttribute="leading" secondItem="bHd-sq-lZd" secondAttribute="leading" id="QhC-QY-T5D"/>
+                            <constraint firstAttribute="trailing" secondItem="gG8-EG-DF2" secondAttribute="trailing" id="id8-05-QQk"/>
+                            <constraint firstItem="cKD-AQ-e9h" firstAttribute="top" secondItem="gG8-EG-DF2" secondAttribute="bottom" id="xME-m4-mi2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Collage" id="cpf-4I-soP">
                         <barButtonItem key="rightBarButtonItem" title="Print" id="wGF-Qu-0gW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="gG8-EG-DF2" id="jhn-qw-EoZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCq-r7-7g1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

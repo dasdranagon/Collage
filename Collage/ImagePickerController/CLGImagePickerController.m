@@ -8,12 +8,14 @@
 
 #import "CLGImagePickerController.h"
 #import "CLGImagePickerViewModel.h"
+#import "CLGCollageViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CLGImageCell.h"
 #import "IGMedia.h"
 #import "IGImage.h"
 
+static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen";
 static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
 
 @interface CLGImagePickerController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -34,6 +36,8 @@ static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
         @strongify(self);
         [self.collectionView reloadData];
     }];
+    
+    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.viewModel, canMakeCollage);
 }
 
 #pragma mark -- UICollectionViewDataSource
@@ -67,15 +71,13 @@ static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:kGoToCollageScreenSegueIdentifier]){
+        NSArray *images = [self.viewModel.images objectsAtIndexes:self.viewModel.selectedIndexs];
+        CLGCollageViewModel *collageViewModel = [[CLGCollageViewModel alloc] initWidthImages:images];
+        ((CLGViewController *)[segue destinationViewController]).viewModel = collageViewModel;
+    }
 }
-*/
 
 @end
