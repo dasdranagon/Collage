@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="5" y="36"/>
         </scene>
-        <!--Select User Controller - Select user-->
+        <!--Select User Controller - Выбор пользователя-->
         <scene sceneID="KxC-yu-rEO">
             <objects>
                 <viewController id="Mbc-fd-enq" customClass="CLGSelectUserController" sceneMemberID="viewController">
@@ -51,8 +51,8 @@
                             <constraint firstItem="yb0-cg-sgL" firstAttribute="top" secondItem="ksy-RN-84m" secondAttribute="bottom" constant="7" id="r2h-VJ-u8p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select user" id="V5X-0v-lnf">
-                        <barButtonItem key="rightBarButtonItem" title="next" id="c4q-fO-UD2">
+                    <navigationItem key="navigationItem" title="Выбор пользователя" id="V5X-0v-lnf">
+                        <barButtonItem key="rightBarButtonItem" title="Далее" id="c4q-fO-UD2">
                             <connections>
                                 <segue destination="e2s-A0-MbE" kind="push" identifier="goToImagePicker" id="j34-Rd-Efl"/>
                             </connections>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="432" y="36"/>
         </scene>
-        <!--Image Picker Controller - Picker-->
+        <!--Image Picker Controller - Выбор лучших фото-->
         <scene sceneID="kDx-NT-gRL">
             <objects>
                 <viewController id="e2s-A0-MbE" customClass="CLGImagePickerController" sceneMemberID="viewController">
@@ -102,8 +102,8 @@
                             <constraint firstAttribute="trailing" secondItem="kLa-bu-1HD" secondAttribute="trailing" id="zts-r7-JTf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Picker" id="UWF-ad-Q9Y">
-                        <barButtonItem key="rightBarButtonItem" title="next" id="ceP-3i-9Sd">
+                    <navigationItem key="navigationItem" title="Выбор лучших фото" id="UWF-ad-Q9Y">
+                        <barButtonItem key="rightBarButtonItem" title="Коллаж" id="ceP-3i-9Sd">
                             <connections>
                                 <segue destination="p6y-c8-Ouy" kind="push" identifier="goToCollageScreen" id="Ld4-Nv-plJ"/>
                             </connections>
@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="888" y="36"/>
         </scene>
-        <!--Collage Controller - Collage-->
+        <!--Collage Controller - Коллаж-->
         <scene sceneID="MIX-4w-ARb">
             <objects>
                 <viewController id="p6y-c8-Ouy" customClass="CLGCollageController" sceneMemberID="viewController">
@@ -141,15 +141,19 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gG8-EG-DF2" firstAttribute="top" secondItem="bHd-sq-lZd" secondAttribute="top" id="Lea-az-jkG"/>
                             <constraint firstItem="gG8-EG-DF2" firstAttribute="leading" secondItem="bHd-sq-lZd" secondAttribute="leading" id="QhC-QY-T5D"/>
                             <constraint firstAttribute="trailing" secondItem="gG8-EG-DF2" secondAttribute="trailing" id="id8-05-QQk"/>
                             <constraint firstItem="cKD-AQ-e9h" firstAttribute="top" secondItem="gG8-EG-DF2" secondAttribute="bottom" id="xME-m4-mi2"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Bpv-qn-IaG" appends="YES" id="aMz-Yb-4p3"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Collage" id="cpf-4I-soP">
-                        <barButtonItem key="rightBarButtonItem" title="Print" id="wGF-Qu-0gW">
+                    <navigationItem key="navigationItem" title="Коллаж" id="cpf-4I-soP">
+                        <barButtonItem key="rightBarButtonItem" title="Печать" id="wGF-Qu-0gW">
                             <connections>
                                 <action selector="print:" destination="p6y-c8-Ouy" id="20h-2e-nks"/>
                             </connections>
@@ -160,6 +164,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCq-r7-7g1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Bpv-qn-IaG">
+                    <connections>
+                        <action selector="changeLayout:" destination="p6y-c8-Ouy" id="g4i-ED-hwc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1323" y="36"/>
         </scene>

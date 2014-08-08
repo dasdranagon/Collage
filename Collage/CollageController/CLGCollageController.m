@@ -19,12 +19,17 @@
 static NSString * const kCollageCellIdentifier = @"kCollageCellIdentifier";
 static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
 
+static CGFloat const kFlowLayoutPhotoSide = 100;
+
 @interface CLGCollageController ()<UICollectionViewDataSource, UIPrintInteractionControllerDelegate>
 @property (nonatomic, strong) CLGCollageViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *layouts;
+@property (nonatomic) NSInteger currentLayoutIndex;
 @end
 
 @implementation CLGCollageController
+
 
 - (void)viewDidLoad
 {
@@ -33,15 +38,25 @@ static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"CLGCollageCell" bundle:nil] forCellWithReuseIdentifier:kCollageCellIdentifier];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(100, 100);
+    flowLayout.itemSize = CGSizeMake(kFlowLayoutPhotoSide, kFlowLayoutPhotoSide);
+    
     self.collectionView.collectionViewLayout =  flowLayout;
+    
+    self.layouts = @[flowLayout, [CLGCircleLayout new], [CLGSimpleTileLayout new]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self.collectionView setCollectionViewLayout:[[CLGCircleLayout alloc] init]
+    [self changeLayout:nil];
+}
+
+- (IBAction)changeLayout:(id)sender
+{
+ 
+    _currentLayoutIndex = (_currentLayoutIndex +1) % self.layouts.count;
+    [self.collectionView setCollectionViewLayout:self.layouts[_currentLayoutIndex]
                                         animated:YES];
 }
 
