@@ -137,7 +137,6 @@
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="p6y-c8-Ouy" id="sow-pZ-uCe"/>
-                                    <outlet property="delegate" destination="p6y-c8-Ouy" id="ahz-hU-FZL"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -150,7 +149,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Collage" id="cpf-4I-soP">
-                        <barButtonItem key="rightBarButtonItem" title="Print" id="wGF-Qu-0gW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Print" id="wGF-Qu-0gW">
+                            <connections>
+                                <action selector="print:" destination="p6y-c8-Ouy" id="20h-2e-nks"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="gG8-EG-DF2" id="jhn-qw-EoZ"/>
