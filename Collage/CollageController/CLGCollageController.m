@@ -13,6 +13,8 @@
 #import "IGImage.h"
 
 #import "CLGSimpleTileLayout.h"
+#import "CLGCircleLayout.h"
+
 
 static NSString * const kCollageCellIdentifier = @"kCollageCellIdentifier";
 static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
@@ -39,7 +41,7 @@ static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
 {
     [super viewDidAppear:animated];
     
-    [self.collectionView setCollectionViewLayout:[[CLGSimpleTileLayout alloc] init]
+    [self.collectionView setCollectionViewLayout:[[CLGCircleLayout alloc] init]
                                         animated:YES];
 }
 
@@ -81,10 +83,8 @@ static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
     UIGraphicsBeginImageContextWithOptions(self.collectionView.frame.size, NO, 0);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
     [[self.collectionView layer] renderInContext:context];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
     
     return image;
@@ -101,7 +101,6 @@ static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
 {
     CLGCollageCell *cell = (CLGCollageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollageCellIdentifier
                                                                                    forIndexPath:indexPath];
-    
     IGMedia *media = self.viewModel.images[indexPath.row];
     [cell setImageUrl:media.lowImage.url];
     return cell;

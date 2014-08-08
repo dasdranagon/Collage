@@ -28,6 +28,10 @@
             itemAttributes.frame = frm;
             itemAttributes.center = [self centerForItemAtIndex:indexPath.row];
         }
+        else {
+            itemAttributes.frame = frm;
+        }
+        
         itemAttributes.transform3D = [self transformItemAtIndex:indexPath.row];
         newLayoutInfo[indexPath.row] = itemAttributes;
         

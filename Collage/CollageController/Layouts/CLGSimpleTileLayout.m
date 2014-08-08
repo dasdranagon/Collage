@@ -12,17 +12,12 @@
 static CGFloat const kPhotoSide = 120;
 static CGFloat const kHorisontalCenterOffset = 50;
 
-@interface CLGSimpleTileLayout()
-
-@end
-
 @implementation CLGSimpleTileLayout
 
 - (void)prepareLayout
 {
     [super prepareLayout];
     srand (time(0));
-   
 }
 
 - (CGPoint)centerForItemAtIndex:(NSInteger)idx
