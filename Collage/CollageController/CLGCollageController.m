@@ -34,6 +34,10 @@ static CGFloat const kFlowLayoutPhotoSide = 100;
      NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
     
+    self.navigationItem.title = NSLocalizedString(@"Collage", nil);
+    self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Print", nil);
+    
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(kFlowLayoutPhotoSide, kFlowLayoutPhotoSide);
     

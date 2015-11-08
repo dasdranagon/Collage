@@ -18,6 +18,7 @@
 @end
 
 @implementation CLGImagePickerViewModel
+@dynamic selectedIndexs;
 
 - (instancetype)initWidthRequester:(CLGRequester *)requester
 {

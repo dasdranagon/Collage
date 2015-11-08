@@ -30,6 +30,9 @@ static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen"
     NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
   
+    self.navigationItem.title = NSLocalizedString(@"Select photos", nil);
+    self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Collage", nil);
+    
     @weakify(self);
     [[RACObserve(self.viewModel, images) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self);

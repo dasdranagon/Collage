@@ -20,7 +20,7 @@
 //  outputs
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic) BOOL canMakeCollage;
-- (NSIndexSet *)selectedIndexs;
+@property (nonatomic, readonly) NSIndexSet *selectedIndexs;
 
 @end
 

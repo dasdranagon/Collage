@@ -30,8 +30,11 @@ static NSString * const kGoToImagePickerSegueIdentifier = @"goToImagePicker";
 
 - (void)viewDidLoad
 {
-    NSAssert(self.viewModel, @"viewModel not seted");
+    NSAssert(self.viewModel, @"viewModel is not initialized");
     [super viewDidLoad];
+    
+    self.navigationItem.title = NSLocalizedString(@"Select user", nil);
+    self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Next", nil);
     
     RAC(self.viewModel, name) = self.userNameTextfield.rac_textSignal;
     RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.viewModel, validName);
