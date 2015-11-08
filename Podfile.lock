@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.3.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.3.1)
+    - AFNetworking/NSURLSession (= 2.3.1)
+    - AFNetworking/Reachability (= 2.3.1)
+    - AFNetworking/Security (= 2.3.1)
+    - AFNetworking/Serialization (= 2.3.1)
+    - AFNetworking/UIKit (= 2.3.1)
   - AFNetworking/NSURLConnection (2.3.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -24,7 +24,7 @@ PODS:
   - HTProgressHUD (0.2.1)
   - OCMock (2.2.4)
   - ReactiveCocoa (2.3.1):
-    - ReactiveCocoa/UI
+    - ReactiveCocoa/UI (= 2.3.1)
   - ReactiveCocoa/Core (2.3.1):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.3.1)
@@ -33,7 +33,7 @@ PODS:
   - ReactiveViewModel (0.2):
     - ReactiveCocoa (~> 2.1)
   - SDWebImage (3.7.1):
-    - SDWebImage/Core
+    - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
   - Specta (0.2.1)
 
@@ -48,13 +48,13 @@ DEPENDENCIES:
   - Specta (~> 0.2.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
-  HTProgressHUD: 5009f5e22d72757019864a792531d18f353bd01a
-  OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
-  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
-  ReactiveViewModel: 78387196df2e7535bb2776c41df15dbb17300f8a
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
+  Expecta: cfaf1d3e2e194ca704a25e997093d30a1ce70b61
+  HTProgressHUD: 14ecb00aa05e6ed75fdb8b859be5473d3f001175
+  OCMock: a6a7dc0e3997fb9f35d99f72528698ebf60d64f2
+  ReactiveCocoa: 334468a83b2c5f669f7cfb9a084415ee23219b4f
+  ReactiveViewModel: 3b25ab68711944b1706b9dd6d1b37f37cbe6b094
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
+  Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.38.0
