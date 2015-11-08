@@ -17,7 +17,7 @@ static CGFloat const kHorisontalCenterOffset = 50;
 - (void)prepareLayout
 {
     [super prepareLayout];
-    srand (time(0));
+    srand ((int)time(0));
 }
 
 - (CGPoint)centerForItemAtIndex:(NSInteger)idx

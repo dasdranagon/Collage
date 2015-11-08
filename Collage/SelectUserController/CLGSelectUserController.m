@@ -20,6 +20,7 @@ static NSString * const kGoToImagePickerSegueIdentifier = @"goToImagePicker";
 @end
 
 @implementation CLGSelectUserController
+@dynamic viewModel;
 
 - (void)awakeFromNib
 {
