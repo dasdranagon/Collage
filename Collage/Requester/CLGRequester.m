@@ -61,7 +61,7 @@ NSString * const kCLGRequestErrorDomain = @"CLGRequestErrorDomain";
             signal = [RACSignal error:[NSError errorWithDomain:kCLGRequestErrorDomain code:0 userInfo:nil]];
         }
         else {
-            signal = [self.manager mediasForUserId:user.id clientId:kClientId];
+            signal = [self.manager mediasForUserId:user.userId clientId:kClientId];
         }
         
         return signal;

@@ -15,8 +15,6 @@
 #import "CLGSimpleTileLayout.h"
 #import "CLGCircleLayout.h"
 
-
-static NSString * const kCollageCellIdentifier = @"kCollageCellIdentifier";
 static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
 
 static CGFloat const kFlowLayoutPhotoSide = 100;
@@ -29,14 +27,13 @@ static CGFloat const kFlowLayoutPhotoSide = 100;
 @end
 
 @implementation CLGCollageController
-
+@dynamic viewModel;
 
 - (void)viewDidLoad
 {
      NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
     
-    [self.collectionView registerNib:[UINib nibWithNibName:@"CLGCollageCell" bundle:nil] forCellWithReuseIdentifier:kCollageCellIdentifier];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(kFlowLayoutPhotoSide, kFlowLayoutPhotoSide);
     
@@ -114,10 +111,10 @@ static CGFloat const kFlowLayoutPhotoSide = 100;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CLGCollageCell *cell = (CLGCollageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollageCellIdentifier
+    CLGCollageCell *cell = (CLGCollageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CLGCollageCell class])
                                                                                    forIndexPath:indexPath];
     IGMedia *media = self.viewModel.images[indexPath.row];
-    [cell setImageUrl:media.lowImage.url];
+    [cell configureWithCLGImage:media.lowImage];
     return cell;
 }
 

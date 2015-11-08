@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class IGImage;
+
 @interface CLGCollageCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-- (void)setImageUrl:(NSString *)imageUrl;
+- (void)configureWithCLGImage:(IGImage *)image;
 @end

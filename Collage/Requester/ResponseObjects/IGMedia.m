@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        _id = dict[@"id"];
+        _mediaId = dict[@"id"];
         _type = [self mediaTypeFromString:dict[@"type"]];
         
         NSDictionary *likes = dict[@"likes"];

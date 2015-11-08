@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _id = dict[@"id"];
+        _userId = dict[@"id"];
         _name = [NSString stringWithFormat:@"%@ %@", dict[@"first_name"], dict[@"last_name"]];
         _picture = dict[@"profile_picture"];
     }

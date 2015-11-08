@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, InstagrammMediaType)
 
 @interface IGMedia : NSObject
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *mediaId;
 @property (nonatomic) InstagrammMediaType type;
 @property (nonatomic) NSInteger likesCount;
 @property (nonatomic, strong) IGImage *thumbnail;

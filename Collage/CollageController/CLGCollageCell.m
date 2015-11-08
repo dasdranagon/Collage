@@ -7,13 +7,18 @@
 //
 
 #import "CLGCollageCell.h"
+#import "IGImage.h"
 #import "UIImageView+WebCache.h"
+
+@interface CLGCollageCell()
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@end
 
 @implementation CLGCollageCell
 
-- (void)setImageUrl:(NSString *)imageUrl
+- (void)configureWithCLGImage:(IGImage *)image
 {
-    [self.image sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    [self.image sd_setImageWithURL:[NSURL URLWithString:image.url]];
 }
 
 @end

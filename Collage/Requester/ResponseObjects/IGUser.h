@@ -11,7 +11,7 @@
 @interface IGUser : NSObject
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *picture;
 

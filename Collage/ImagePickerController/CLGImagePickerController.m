@@ -16,7 +16,6 @@
 #import "IGImage.h"
 
 static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen";
-static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
 
 @interface CLGImagePickerController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -24,6 +23,7 @@ static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
 @end
 
 @implementation CLGImagePickerController
+@dynamic viewModel;
 
 - (void)viewDidLoad
 {
@@ -31,7 +31,6 @@ static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
     [super viewDidLoad];
   
     @weakify(self);
-    [_collectionView registerNib:[UINib nibWithNibName:@"CLGImageCell" bundle:nil] forCellWithReuseIdentifier:kImageCellIdentifier];
     [[RACObserve(self.viewModel, images) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self);
         [self.collectionView reloadData];
@@ -49,11 +48,11 @@ static NSString * const kImageCellIdentifier = @"kImageCellIdentifier";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CLGImageCell *cell = (CLGImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kImageCellIdentifier
+    CLGImageCell *cell = (CLGImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CLGImageCell class])
                                                                            forIndexPath:indexPath];
     
     IGMedia *media = self.viewModel.images[indexPath.row];
-    [cell setImageUrl:media.thumbnail.url];
+    [cell configWithImage:media.thumbnail];
     [cell setChecked:[self.viewModel.selectedIndexs containsIndex:indexPath.row]];
     return cell;
 }

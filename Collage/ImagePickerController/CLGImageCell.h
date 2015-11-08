@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class IGImage;
+
 @interface CLGImageCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *checkImage;
-@property (nonatomic, strong) IBOutlet UIImageView *image;
-- (void)setImageUrl:(NSString *)imageUrl;
+- (void)configWithImage:(IGImage *)image;
 - (void)setChecked:(BOOL)checked;
 @end

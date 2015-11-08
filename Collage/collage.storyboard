@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AdW-ha-JLi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AdW-ha-JLi">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -19,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="5" y="36"/>
         </scene>
-        <!--Select User Controller - Выбор пользователя-->
+        <!--Выбор пользователя-->
         <scene sceneID="KxC-yu-rEO">
             <objects>
                 <viewController id="Mbc-fd-enq" customClass="CLGSelectUserController" sceneMemberID="viewController">
@@ -33,7 +34,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yb0-cg-sgL">
                                 <rect key="frame" x="9" y="71" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cZ3-qX-02h"/>
                                 </constraints>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="432" y="36"/>
         </scene>
-        <!--Image Picker Controller - Выбор лучших фото-->
+        <!--Выбор лучших фото-->
         <scene sceneID="kDx-NT-gRL">
             <objects>
                 <viewController id="e2s-A0-MbE" customClass="CLGImagePickerController" sceneMemberID="viewController">
@@ -80,14 +80,46 @@
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLa-bu-1HD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dA9-3e-dUW">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CLGImageCell" id="TaG-v5-mBX" customClass="CLGImageCell">
+                                        <rect key="frame" x="0.0" y="64" width="90" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VnW-II-4dU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="zyQ-a2-aEH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VnW-II-4dU" firstAttribute="leading" secondItem="TaG-v5-mBX" secondAttribute="leading" id="1FE-cx-6TA"/>
+                                            <constraint firstAttribute="trailing" secondItem="VnW-II-4dU" secondAttribute="trailing" id="DWC-b6-8Oi"/>
+                                            <constraint firstItem="VnW-II-4dU" firstAttribute="top" secondItem="TaG-v5-mBX" secondAttribute="top" id="EEB-bs-0o0"/>
+                                            <constraint firstItem="zyQ-a2-aEH" firstAttribute="leading" secondItem="TaG-v5-mBX" secondAttribute="leading" id="N6R-Me-hqG"/>
+                                            <constraint firstAttribute="bottom" secondItem="zyQ-a2-aEH" secondAttribute="bottom" id="SIe-ft-N3k"/>
+                                            <constraint firstAttribute="trailing" secondItem="zyQ-a2-aEH" secondAttribute="trailing" id="TnS-Qq-zFb"/>
+                                            <constraint firstAttribute="bottom" secondItem="VnW-II-4dU" secondAttribute="bottom" id="Ui3-Md-vjn"/>
+                                            <constraint firstItem="zyQ-a2-aEH" firstAttribute="top" secondItem="TaG-v5-mBX" secondAttribute="top" id="eFR-50-77P"/>
+                                        </constraints>
+                                        <size key="customSize" width="90" height="85"/>
+                                        <connections>
+                                            <outlet property="checkImage" destination="zyQ-a2-aEH" id="VEX-FX-VJl"/>
+                                            <outlet property="image" destination="VnW-II-4dU" id="nzP-cu-8Bf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="e2s-A0-MbE" id="0uo-c8-Zw0"/>
                                     <outlet property="delegate" destination="e2s-A0-MbE" id="r17-mh-coQ"/>
@@ -117,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="888" y="36"/>
         </scene>
-        <!--Collage Controller - Коллаж-->
+        <!--Коллаж-->
         <scene sceneID="MIX-4w-ARb">
             <objects>
                 <viewController id="p6y-c8-Ouy" customClass="CLGCollageController" sceneMemberID="viewController">
@@ -131,10 +163,35 @@
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-EG-DF2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="9Nc-No-TH0"/>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CLGCollageCell" id="AHG-Gh-LCs" customClass="CLGCollageCell">
+                                        <rect key="frame" x="0.0" y="64" width="132" height="131"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="132" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCz-rJ-c6B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="132" height="131"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="KCz-rJ-c6B" secondAttribute="trailing" id="1qA-bT-tWV"/>
+                                            <constraint firstItem="KCz-rJ-c6B" firstAttribute="top" secondItem="AHG-Gh-LCs" secondAttribute="top" id="8dw-nj-PXf"/>
+                                            <constraint firstAttribute="bottom" secondItem="KCz-rJ-c6B" secondAttribute="bottom" id="VFk-mx-MdB"/>
+                                            <constraint firstItem="KCz-rJ-c6B" firstAttribute="leading" secondItem="AHG-Gh-LCs" secondAttribute="leading" id="aL7-IL-v7c"/>
+                                        </constraints>
+                                        <size key="customSize" width="132" height="131"/>
+                                        <connections>
+                                            <outlet property="image" destination="KCz-rJ-c6B" id="ohD-35-eLn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="p6y-c8-Ouy" id="sow-pZ-uCe"/>
                                 </connections>
@@ -173,9 +230,7 @@
             <point key="canvasLocation" x="1323" y="36"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="check" width="64" height="64"/>
+    </resources>
 </document>

@@ -7,13 +7,19 @@
 //
 
 #import "CLGImageCell.h"
+#import "IGImage.h"
 #import "UIImageView+WebCache.h"
+
+@interface CLGImageCell()
+@property (weak, nonatomic) IBOutlet UIImageView *checkImage;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@end
 
 @implementation CLGImageCell
 
-- (void)setImageUrl:(NSString *)imageUrl
+- (void)configWithImage:(IGImage *)image
 {
-    [self.image sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    [self.image sd_setImageWithURL:[NSURL URLWithString:image.url]];
 }
 
 - (void)setChecked:(BOOL)checked

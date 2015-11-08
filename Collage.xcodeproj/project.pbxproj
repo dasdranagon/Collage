@@ -38,9 +38,7 @@
 		6B075B5C1992542C00E61BEA /* CLGSelectUserViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5B1992542C00E61BEA /* CLGSelectUserViewModelTests.m */; };
 		6B075B5E1992700400E61BEA /* CLGImagePickerViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */; };
 		6B075B6119927FC600E61BEA /* CLGImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B6019927FC600E61BEA /* CLGImageCell.m */; };
-		6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B6219927FE700E61BEA /* CLGImageCell.xib */; };
 		6B075B661993A8FE00E61BEA /* CLGCollageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B651993A8FE00E61BEA /* CLGCollageCell.m */; };
-		6B075B681993A91D00E61BEA /* CLGCollageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B075B671993A91D00E61BEA /* CLGCollageCell.xib */; };
 		6B075B751993EAE900E61BEA /* CLGSimpleTileLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */; };
 		6B075B781993EF5500E61BEA /* CLGBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B771993EF5500E61BEA /* CLGBaseLayout.m */; };
 		6B075B7B1994C46900E61BEA /* CLGCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B7A1994C46900E61BEA /* CLGCircleLayout.m */; };
@@ -109,10 +107,8 @@
 		6B075B5D1992700400E61BEA /* CLGImagePickerViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImagePickerViewModelTests.m; sourceTree = "<group>"; };
 		6B075B5F19927FC600E61BEA /* CLGImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGImageCell.h; sourceTree = "<group>"; };
 		6B075B6019927FC600E61BEA /* CLGImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGImageCell.m; sourceTree = "<group>"; };
-		6B075B6219927FE700E61BEA /* CLGImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLGImageCell.xib; sourceTree = "<group>"; };
 		6B075B641993A8FE00E61BEA /* CLGCollageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCollageCell.h; sourceTree = "<group>"; };
 		6B075B651993A8FE00E61BEA /* CLGCollageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCollageCell.m; sourceTree = "<group>"; };
-		6B075B671993A91D00E61BEA /* CLGCollageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLGCollageCell.xib; sourceTree = "<group>"; };
 		6B075B731993EAE900E61BEA /* CLGSimpleTileLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSimpleTileLayout.h; sourceTree = "<group>"; };
 		6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSimpleTileLayout.m; sourceTree = "<group>"; };
 		6B075B761993EF5500E61BEA /* CLGBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGBaseLayout.h; sourceTree = "<group>"; };
@@ -309,7 +305,6 @@
 				6B075B5619922E0300E61BEA /* CLGImagePickerViewModel.m */,
 				6B075B5F19927FC600E61BEA /* CLGImageCell.h */,
 				6B075B6019927FC600E61BEA /* CLGImageCell.m */,
-				6B075B6219927FE700E61BEA /* CLGImageCell.xib */,
 			);
 			path = ImagePickerController;
 			sourceTree = "<group>";
@@ -324,7 +319,6 @@
 				6B075B5919922E1900E61BEA /* CLGCollageViewModel.m */,
 				6B075B641993A8FE00E61BEA /* CLGCollageCell.h */,
 				6B075B651993A8FE00E61BEA /* CLGCollageCell.m */,
-				6B075B671993A91D00E61BEA /* CLGCollageCell.xib */,
 			);
 			path = CollageController;
 			sourceTree = "<group>";
@@ -424,8 +418,6 @@
 			files = (
 				6B075AFE1991023E00E61BEA /* InfoPlist.strings in Resources */,
 				6B075B061991023E00E61BEA /* Images.xcassets in Resources */,
-				6B075B6319927FE700E61BEA /* CLGImageCell.xib in Resources */,
-				6B075B681993A91D00E61BEA /* CLGCollageCell.xib in Resources */,
 				6B075B381991E0D900E61BEA /* collage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
