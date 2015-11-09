@@ -24,15 +24,14 @@ beforeEach(^{
     
     logicMoc = [OCMockObject partialMockForObject:[[CLGLogic alloc] init]];
     controller.logic = logicMoc;
-    
-    activityIndicatorMoc = [OCMockObject mockForProtocol:@protocol(CLGActivityIndicator)];
-    controller.activityIndicator = activityIndicatorMoc;
 });
 
 describe(@"CLGViewController", ^{
     
     it(@"activity indicator should be configured after loading view", ^{
-        [[activityIndicatorMoc expect] configWithView:[OCMArg any]];
+        activityIndicatorMoc = [OCMockObject mockForProtocol:@protocol(CLGActivityIndicator)];
+        controller.activityIndicator = activityIndicatorMoc;
+        [[activityIndicatorMoc expect] configWithView:OCMOCK_ANY];
         [controller viewDidLoad];
         [activityIndicatorMoc verify];
     });

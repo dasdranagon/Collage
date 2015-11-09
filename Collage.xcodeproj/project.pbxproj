@@ -43,7 +43,6 @@
 		6B075B751993EAE900E61BEA /* CLGSimpleTileLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B741993EAE900E61BEA /* CLGSimpleTileLayout.m */; };
 		6B075B781993EF5500E61BEA /* CLGBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B771993EF5500E61BEA /* CLGBaseLayout.m */; };
 		6B075B7B1994C46900E61BEA /* CLGCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B075B7A1994C46900E61BEA /* CLGCircleLayout.m */; };
-		6B46B8461BEF995E005DB336 /* CLGAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8451BEF995E005DB336 /* CLGAssembly.m */; };
 		6B46B8491BEFA489005DB336 /* CLGControllersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8481BEFA489005DB336 /* CLGControllersAssembly.m */; };
 		6B46B85B1BEFC8F5005DB336 /* CLGAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8581BEFC8F5005DB336 /* CLGAlertViewManager.m */; };
 		6B46B85C1BEFC8F5005DB336 /* HTProgressHUD+CLGActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B85A1BEFC8F5005DB336 /* HTProgressHUD+CLGActivityIndicator.m */; };
@@ -124,8 +123,6 @@
 		6B075B771993EF5500E61BEA /* CLGBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGBaseLayout.m; sourceTree = "<group>"; };
 		6B075B791994C46900E61BEA /* CLGCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCircleLayout.h; sourceTree = "<group>"; };
 		6B075B7A1994C46900E61BEA /* CLGCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCircleLayout.m; sourceTree = "<group>"; };
-		6B46B8441BEF995E005DB336 /* CLGAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGAssembly.h; sourceTree = "<group>"; };
-		6B46B8451BEF995E005DB336 /* CLGAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGAssembly.m; sourceTree = "<group>"; };
 		6B46B8471BEFA489005DB336 /* CLGControllersAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGControllersAssembly.h; sourceTree = "<group>"; };
 		6B46B8481BEFA489005DB336 /* CLGControllersAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGControllersAssembly.m; sourceTree = "<group>"; };
 		6B46B8551BEFC8BA005DB336 /* CLGActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLGActivityIndicator.h; path = Interfaces/CLGActivityIndicator.h; sourceTree = "<group>"; };
@@ -362,8 +359,6 @@
 		6B46B8431BEF9910005DB336 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				6B46B8441BEF995E005DB336 /* CLGAssembly.h */,
-				6B46B8451BEF995E005DB336 /* CLGAssembly.m */,
 				6B46B8471BEFA489005DB336 /* CLGControllersAssembly.h */,
 				6B46B8481BEFA489005DB336 /* CLGControllersAssembly.m */,
 				6B46B8611BEFF53B005DB336 /* CLGLogicsAssembly.h */,
@@ -583,7 +578,6 @@
 				6B075B2C199129D300E61BEA /* IGUser.m in Sources */,
 				6B075B6119927FC600E61BEA /* CLGImageCell.m in Sources */,
 				6B075B5419922DA600E61BEA /* CLGSelectUserLogic.m in Sources */,
-				6B46B8461BEF995E005DB336 /* CLGAssembly.m in Sources */,
 				6B46B86A1BF01E2C005DB336 /* CLGStandartPrintManager.m in Sources */,
 				6B075B321991338800E61BEA /* IGImage.m in Sources */,
 				6B075B4919922C2800E61BEA /* CLGSelectUserController.m in Sources */,

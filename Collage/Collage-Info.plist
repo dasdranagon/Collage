@@ -55,7 +55,6 @@
 	</dict>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
-		<string>CLGAssembly</string>
 		<string>CLGControllersAssembly</string>
 		<string>CLGLogicsAssembly</string>
 		<string>CLGUtilitiesAssembly</string>

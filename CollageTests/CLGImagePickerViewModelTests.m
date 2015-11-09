@@ -21,7 +21,8 @@ __block OCMockObject *requesterMoc;
 
 beforeEach(^{
     requesterMoc = [OCMockObject mockForClass:[CLGRequester class]];
-    viewModel = [[CLGImagePickerLogic alloc] initWidthRequester:(CLGRequester *)requesterMoc];
+    viewModel = [[CLGImagePickerLogic alloc] init];
+    viewModel.requester = (CLGRequester *)requesterMoc;
 });
 
 describe(@"CLGImagePickerViewModel", ^{
