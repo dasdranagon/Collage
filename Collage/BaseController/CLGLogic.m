@@ -18,21 +18,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
 {
-    __block CLGSegue *sg = nil;
-    [self.segues enumerateObjectsUsingBlock:^(CLGSegue *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj.identifier isEqualToString:segue.identifier]) {
-            sg = obj;
-            *stop = YES;
-        }
-    }];
-    
+   id<CLGSegue> sg = self.segues[segue.identifier];
+   
+    [sg prepareWithSourceLogic:self];
     CLGViewController *destinationController = [segue destinationViewController];
     
-    @weakify(self);
-    [sg.initialInfo enumerateKeysAndObjectsUsingBlock:^(NSString *from, NSString *to, BOOL * _Nonnull stop) {
-        @strongify(self);
-        [destinationController.logic setValue:[self valueForKey:from] forKey:to];
-    }];
+    [sg applyForDestinationLogic:destinationController.logic];
 }
 
 - (void)dealloc

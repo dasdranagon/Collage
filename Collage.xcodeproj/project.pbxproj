@@ -48,7 +48,7 @@
 		6B46B85C1BEFC8F5005DB336 /* HTProgressHUD+CLGActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B85A1BEFC8F5005DB336 /* HTProgressHUD+CLGActivityIndicator.m */; };
 		6B46B85F1BEFCBE4005DB336 /* CLGUtilitiesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B85E1BEFCBE4005DB336 /* CLGUtilitiesAssembly.m */; };
 		6B46B8631BEFF53B005DB336 /* CLGLogicsAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8621BEFF53B005DB336 /* CLGLogicsAssembly.m */; };
-		6B46B8671BEFFB9D005DB336 /* CLGSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8661BEFFB9D005DB336 /* CLGSegue.m */; };
+		6B46B8671BEFFB9D005DB336 /* CLGKVCSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8661BEFFB9D005DB336 /* CLGKVCSegue.m */; };
 		6B46B86A1BF01E2C005DB336 /* CLGStandartPrintManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46B8691BF01E2C005DB336 /* CLGStandartPrintManager.m */; };
 		C44CD9A8DAC045E5BBC20A4F /* libPods-CollageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D0306095184D8589647BF0 /* libPods-CollageTests.a */; };
 /* End PBXBuildFile section */
@@ -136,11 +136,12 @@
 		6B46B8601BEFCC03005DB336 /* CLGUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLGUtilities.h; sourceTree = "<group>"; };
 		6B46B8611BEFF53B005DB336 /* CLGLogicsAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGLogicsAssembly.h; sourceTree = "<group>"; };
 		6B46B8621BEFF53B005DB336 /* CLGLogicsAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGLogicsAssembly.m; sourceTree = "<group>"; };
-		6B46B8651BEFFB9D005DB336 /* CLGSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSegue.h; sourceTree = "<group>"; };
-		6B46B8661BEFFB9D005DB336 /* CLGSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGSegue.m; sourceTree = "<group>"; };
+		6B46B8651BEFFB9D005DB336 /* CLGKVCSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGKVCSegue.h; sourceTree = "<group>"; };
+		6B46B8661BEFFB9D005DB336 /* CLGKVCSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGKVCSegue.m; sourceTree = "<group>"; };
 		6B46B8681BF01E2C005DB336 /* CLGStandartPrintManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGStandartPrintManager.h; sourceTree = "<group>"; };
 		6B46B8691BF01E2C005DB336 /* CLGStandartPrintManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGStandartPrintManager.m; sourceTree = "<group>"; };
 		6B46B86B1BF02081005DB336 /* CLGPrintManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGPrintManager.h; sourceTree = "<group>"; };
+		6B46B86C1BF0812A005DB336 /* CLGSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGSegue.h; sourceTree = "<group>"; };
 		C8782F699D7842D0B07B1596 /* libPods-Collage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Collage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D0306095184D8589647BF0 /* libPods-CollageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CollageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BF578D486D920A5B4EFA39 /* Pods-Collage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Collage/Pods-Collage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -403,8 +404,9 @@
 				6B075B3E199214CB00E61BEA /* CLGViewController.m */,
 				6B075B3A199214A400E61BEA /* CLGLogic.h */,
 				6B075B3B199214A400E61BEA /* CLGLogic.m */,
-				6B46B8651BEFFB9D005DB336 /* CLGSegue.h */,
-				6B46B8661BEFFB9D005DB336 /* CLGSegue.m */,
+				6B46B86C1BF0812A005DB336 /* CLGSegue.h */,
+				6B46B8651BEFFB9D005DB336 /* CLGKVCSegue.h */,
+				6B46B8661BEFFB9D005DB336 /* CLGKVCSegue.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -592,7 +594,7 @@
 				6B075B5719922E0300E61BEA /* CLGImagePickerLogic.m in Sources */,
 				6B075B28199127A300E61BEA /* CLGRequester.m in Sources */,
 				6B075B7B1994C46900E61BEA /* CLGCircleLayout.m in Sources */,
-				6B46B8671BEFFB9D005DB336 /* CLGSegue.m in Sources */,
+				6B46B8671BEFFB9D005DB336 /* CLGKVCSegue.m in Sources */,
 				6B46B8491BEFA489005DB336 /* CLGControllersAssembly.m in Sources */,
 				6B46B85C1BEFC8F5005DB336 /* HTProgressHUD+CLGActivityIndicator.m in Sources */,
 				6B075B4D19922C9000E61BEA /* CLGImagePickerController.m in Sources */,

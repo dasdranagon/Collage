@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface CLGSegue : NSObject
-
-+ (instancetype)segueWithIdentifier:(NSString *)identifier;
-
-@property (nonatomic, strong) NSString *identifier;
-@property (nonatomic, strong) NSDictionary *initialInfo;
-
+@class CLGLogic;
+@protocol CLGSegue <NSObject>
+- (void)prepareWithSourceLogic:(CLGLogic *)logic;
+- (void)applyForDestinationLogic:(CLGLogic *)logic;
 @end

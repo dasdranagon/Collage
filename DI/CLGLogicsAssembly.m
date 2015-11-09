@@ -9,7 +9,7 @@
 #import "CLGLogicsAssembly.h"
 #import "CLGUtilitiesAssembly.h"
 
-#import "CLGSegue.h"
+#import "CLGKVCSegue.h"
 
 #import "CLGSelectUserLogic.h"
 #import "CLGImagePickerLogic.h"
@@ -32,9 +32,8 @@
     return [TyphoonDefinition withClass:[CLGSelectUserLogic class] configuration:^(TyphoonDefinition *definition) {
         definition.parent = self.baseLogic;
         
-        CLGSegue *segue = [CLGSegue segueWithIdentifier:@"goToImagePicker"];
-        [segue setInitialInfo:@{@"name":@"userName"}];
-        [definition injectProperty:@selector(segues) with:@[segue]];
+        CLGKVCSegue *segue = [CLGKVCSegue segueWithMapDictionary:@{@"name":@"userName"}];
+        [definition injectProperty:@selector(segues) with:@{@"goToImagePicker":segue}];
     }];
 }
 
@@ -43,9 +42,9 @@
     return [TyphoonDefinition withClass:[CLGImagePickerLogic class] configuration:^(TyphoonDefinition *definition) {
         definition.parent = self.baseLogic;
         [definition injectProperty:@selector(requester) with:self.utilities.requester];
-        CLGSegue *segue = [CLGSegue segueWithIdentifier:@"goToCollageScreen"];
-        [segue setInitialInfo:@{@"selectedImages":@"images"}];
-        [definition injectProperty:@selector(segues) with:@[segue]];
+      
+        CLGKVCSegue *segue = [CLGKVCSegue segueWithMapDictionary:@{@"selectedImages":@"images"}];
+        [definition injectProperty:@selector(segues) with:@{@"goToCollageScreen":segue}];
     }];
 }
 
