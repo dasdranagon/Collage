@@ -53,6 +53,15 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>TyphoonInitialAssemblies</key>
+	<array>
+		<string>CLGAssembly</string>
+		<string>CLGControllersAssembly</string>
+		<string>CLGLogicsAssembly</string>
+		<string>CLGUtilitiesAssembly</string>
+	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>collage</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

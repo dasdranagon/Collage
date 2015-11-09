@@ -1,17 +1,17 @@
 //
-//  CLGImagePickerViewModel.h
+//  CLGImagePickerLogic.h
 //  Collage
 //
 //  Created by Denis Skokov on 06.08.14.
 //  Copyright (c) 2014 Denis Skokov. All rights reserved.
 //
 
-#import "CLGViewModel.h"
+#import "CLGLogic.h"
 
 @class CLGRequester;
 
-@interface CLGImagePickerViewModel : CLGViewModel
-- (instancetype)initWidthRequester:(CLGRequester *)requester;
+@interface CLGImagePickerLogic : CLGLogic
+@property (nonatomic, strong) CLGRequester *requester;
 
 //  inputs
 - (void)toggleIndex:(NSInteger)index;
@@ -21,9 +21,5 @@
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic) BOOL canMakeCollage;
 @property (nonatomic, readonly) NSIndexSet *selectedIndexs;
-
-@end
-
-@interface CLGImagePickerViewModel(unavailiable)
-- (id)init __AVAILABILITY_INTERNAL_UNAVAILABLE;
+@property (nonatomic, strong, readonly) NSArray *selectedImages;
 @end

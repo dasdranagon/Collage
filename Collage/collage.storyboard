@@ -58,6 +58,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typhoonKey" value="selectUserController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="userNameTextfield" destination="yb0-cg-sgL" id="LUB-JS-00W"/>
                     </connections>
@@ -141,6 +144,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typhoonKey" value="imagePickerController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="kLa-bu-1HD" id="RHS-FQ-nmh"/>
                     </connections>
@@ -216,6 +222,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typhoonKey" value="сollageController"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="gG8-EG-DF2" id="jhn-qw-EoZ"/>
                     </connections>

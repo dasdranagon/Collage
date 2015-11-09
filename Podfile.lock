@@ -36,6 +36,9 @@ PODS:
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
   - Specta (0.2.1)
+  - Typhoon (3.0.3):
+    - Typhoon/no-arc (= 3.0.3)
+  - Typhoon/no-arc (3.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - ReactiveViewModel (= 0.2)
   - SDWebImage (~> 3.6)
   - Specta (~> 0.2.1)
+  - Typhoon (~> 3.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
@@ -56,5 +60,6 @@ SPEC CHECKSUMS:
   ReactiveViewModel: 3b25ab68711944b1706b9dd6d1b37f37cbe6b094
   SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
   Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
+  Typhoon: 15921a10d1ca2cdf00a64c324be7e2ab77fb240b
 
 COCOAPODS: 0.38.0

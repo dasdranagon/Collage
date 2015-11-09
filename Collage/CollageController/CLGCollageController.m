@@ -7,7 +7,8 @@
 //
 
 #import "CLGCollageController.h"
-#import "CLGCollageViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CLGCollageLogic.h"
 #import "CLGCollageCell.h"
 #import "IGMedia.h"
 #import "IGImage.h"
@@ -19,24 +20,24 @@ static NSString * const kPrinterUnavailableErrorMessage = @"Print Unavailable!";
 
 static CGFloat const kFlowLayoutPhotoSide = 100;
 
-@interface CLGCollageController ()<UICollectionViewDataSource, UIPrintInteractionControllerDelegate>
-@property (nonatomic, strong) CLGCollageViewModel *viewModel;
+@interface CLGCollageController ()<UICollectionViewDataSource>
+@property (nonatomic, strong) CLGCollageLogic *logic;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *layouts;
 @property (nonatomic) NSInteger currentLayoutIndex;
 @end
 
 @implementation CLGCollageController
-@dynamic viewModel;
+@dynamic logic;
 
 - (void)viewDidLoad
 {
-     NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
     
     self.navigationItem.title = NSLocalizedString(@"Collage", nil);
     self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Print", nil);
     
+    RAC(self.logic, alert) = [RACObserve(self.printManager, lastMessage) skip:1];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(kFlowLayoutPhotoSide, kFlowLayoutPhotoSide);
@@ -56,42 +57,14 @@ static CGFloat const kFlowLayoutPhotoSide = 100;
 - (IBAction)changeLayout:(id)sender
 {
  
-    _currentLayoutIndex = (_currentLayoutIndex +1) % self.layouts.count;
-    [self.collectionView setCollectionViewLayout:self.layouts[_currentLayoutIndex]
+    self.currentLayoutIndex = (self.currentLayoutIndex +1) % self.layouts.count;
+    [self.collectionView setCollectionViewLayout:self.layouts[self.currentLayoutIndex]
                                         animated:YES];
 }
 
 - (IBAction)print:(id)sender
 {
-    UIPrintInteractionController *print = [UIPrintInteractionController sharedPrintController];
-    if(!print){
-        self.viewModel.alert = kPrinterUnavailableErrorMessage;
-        return;
-    }
-    
-    print.delegate = self;
-    
-    UIPrintInfo *printInfo = [UIPrintInfo printInfo];
-    printInfo.outputType = UIPrintInfoOutputPhoto;
-    printInfo.jobName = @"Collage";
-    
-    print.printInfo = printInfo;
-    print.printingItem = UIImageJPEGRepresentation([self screenshot], 1.f);;
-
-    [print presentAnimated:YES
-         completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
-        if(!completed && error){
-            self.viewModel.alert = kPrinterUnavailableErrorMessage;
-        }
-    }];
-}
-
-- (UIPrintPaper *)printInteractionController:(UIPrintInteractionController *)printInteractionController
-                                 choosePaper:(NSArray *)paperList {
-    
-    CGSize pageSize = [UIScreen mainScreen].bounds.size;
-    return [UIPrintPaper bestPaperForPageSize:pageSize withPapersFromArray:paperList];
-    
+    [self.printManager printImage:[self screenshot]];
 }
 
 - (UIImage *)screenshot
@@ -110,14 +83,14 @@ static CGFloat const kFlowLayoutPhotoSide = 100;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.viewModel.images.count;
+    return self.logic.images.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CLGCollageCell *cell = (CLGCollageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CLGCollageCell class])
                                                                                    forIndexPath:indexPath];
-    IGMedia *media = self.viewModel.images[indexPath.row];
+    IGMedia *media = self.logic.images[indexPath.row];
     [cell configureWithCLGImage:media.lowImage];
     return cell;
 }

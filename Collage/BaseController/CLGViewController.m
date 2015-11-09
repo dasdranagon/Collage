@@ -7,14 +7,9 @@
 //
 
 #import "CLGViewController.h"
-#import "CLGViewModel.h"
+#import "CLGLogic.h"
 #import <HTProgressHUD/HTProgressHUD.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import <ReactiveCocoa/RACEXTScope.h>
-
-@interface CLGViewController ()
-@property (nonatomic, strong) HTProgressHUD *progressHUD;
-@end
 
 @implementation CLGViewController
 
@@ -22,28 +17,19 @@
 {
     [super viewDidLoad];
     
-    if (self.viewModel) {
-        self.viewModel.active = YES;
-        [[[RACObserve(self.viewModel, alert) filter:^BOOL(id value) {
-            return value != nil;
-        }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSString *alert) {
-            [[[UIAlertView alloc] initWithTitle:nil message:alert delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
-        }];
-        
-        @weakify(self);
-        [RACObserve(self.viewModel, processing) subscribeNext:^(NSNumber *processing) {
-            @strongify(self);
-            if ([processing boolValue]) {
-                if (!self.progressHUD) {
-                    self.progressHUD = [[HTProgressHUD alloc] init];
-                }
-                [self.progressHUD showInView:self.view];
-            }
-            else {
-                [self.progressHUD hide];
-            }
-        }];
-    }
+    NSAssert(self.logic, @"logic is not initialized");
+    
+    [self.logic didLoad];
+    self.logic.active = YES;
+    
+    [self.activityIndicator configWithView:self.view];
+    RAC(self.alertManager, message) = [[RACObserve(self.logic, alert) skip:1] deliverOn:[RACScheduler mainThreadScheduler]];
+    RAC(self.activityIndicator, progressing) = [RACObserve(self.logic, processing) deliverOn:[RACScheduler mainThreadScheduler]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self.logic prepareForSegue:segue];
 }
 
 - (void)dealloc

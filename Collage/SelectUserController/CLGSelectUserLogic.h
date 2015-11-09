@@ -6,16 +6,14 @@
 //  Copyright (c) 2014 Denis Skokov. All rights reserved.
 //
 
-#import "CLGViewModel.h"
+#import "CLGLogic.h"
 
 @class RACCommand;
 
-@interface CLGSelectUserViewModel : CLGViewModel
+@interface CLGSelectUserLogic : CLGLogic
 
-//  inputs
 @property (nonatomic, strong) NSString *name;
 
-//  outputs
-@property (nonatomic) BOOL validName;
+@property (nonatomic) BOOL nameIsValid;
 
 @end

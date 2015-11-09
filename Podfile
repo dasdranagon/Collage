@@ -1,5 +1,7 @@
 platform :ios, "7.0"
 
+pod 'Typhoon', '~> 3.0.2'
+
 target "Collage" do
         pod 'SDWebImage', '~> 3.6'
         pod 'HTProgressHUD'

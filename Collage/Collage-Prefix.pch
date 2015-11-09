@@ -12,5 +12,7 @@
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
+    #import "CLGUtilities.h"
     #import <Foundation/Foundation.h>
+    #import <ReactiveCocoa/RACEXTScope.h>
 #endif

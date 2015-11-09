@@ -11,36 +11,63 @@
 #import "OCMockObject+ReactiveCocoa.h"
 
 #import "CLGViewController.h"
-#import "CLGViewModel.h"
+#import "CLGLogic.h"
 
 SpecBegin(CLGViewController)
 
 __block CLGViewController *controller;
-__block id viewModelMoc;
+__block id logicMoc;
+__block id activityIndicatorMoc;
 
 beforeEach(^{
     controller = [[CLGViewController alloc] init];
-    viewModelMoc = [OCMockObject partialMockForObject:[[CLGViewModel alloc] init]];
-    controller.viewModel = viewModelMoc;
+    
+    logicMoc = [OCMockObject partialMockForObject:[[CLGLogic alloc] init]];
+    controller.logic = logicMoc;
+    
+    activityIndicatorMoc = [OCMockObject mockForProtocol:@protocol(CLGActivityIndicator)];
+    controller.activityIndicator = activityIndicatorMoc;
 });
 
 describe(@"CLGViewController", ^{
-    it(@"should activate model in viewDoidLoad method", ^{
-        [[viewModelMoc expect] setActive:YES];
+    
+    it(@"activity indicator should be configured after loading view", ^{
+        [[activityIndicatorMoc expect] configWithView:[OCMArg any]];
         [controller viewDidLoad];
-        [viewModelMoc verify];
+        [activityIndicatorMoc verify];
+    });
+    
+    it(@"should activate model in viewDoidLoad method", ^{
+        [[logicMoc expect] setActive:YES];
+        [controller viewDidLoad];
+        [logicMoc verify];
+    });
+    
+    it(@"should call didLoad for viewModel in viewDoidLoad method", ^{
+        [[logicMoc expect] didLoad];
+        [controller viewDidLoad];
+        [logicMoc verify];
+    });
+
+    it(@"should call prepareForSegue for viewModel", ^{
+        
+        OCMockObject *segue = [OCMockObject mockForClass:[UIStoryboardSegue class]];
+        
+        [[logicMoc expect] prepareForSegue:[OCMArg any]];
+        [controller prepareForSegue:(UIStoryboardSegue *)segue sender:nil];
+        [logicMoc verify];
     });
     
     it(@"should subscribe to changing alert property in viewDoidLoad method", ^{
-        [viewModelMoc observeProperty:@"alert"];
+        [logicMoc observeProperty:@"alert"];
         [controller viewDidLoad];
-        [viewModelMoc verify];
+        [logicMoc verify];
     });
     
     it(@"should subscribe to changing processing property in viewDoidLoad method", ^{
-        [viewModelMoc observeProperty:@"processing"];
+        [logicMoc observeProperty:@"processing"];
         [controller viewDidLoad];
-        [viewModelMoc verify];
+        [logicMoc verify];
     });
 });
 

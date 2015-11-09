@@ -9,5 +9,5 @@
 #import "CLGViewController.h"
 
 @interface CLGCollageController : CLGViewController
-
+@property (nonatomic, strong) id<CLGPrintManager> printManager;
 @end

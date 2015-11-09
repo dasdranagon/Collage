@@ -7,52 +7,34 @@
 //
 
 #import "CLGSelectUserController.h"
-#import "CLGSelectUserViewModel.h"
+#import "CLGSelectUserLogic.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CLGRequester.h"
-#import "CLGImagePickerViewModel.h"
 
-static NSString * const kGoToImagePickerSegueIdentifier = @"goToImagePicker";
 
 @interface CLGSelectUserController () <UITextFieldDelegate>
-@property (nonatomic, strong) CLGSelectUserViewModel *viewModel;
+@property (nonatomic, strong) CLGSelectUserLogic *logic;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextfield;
 @end
 
 @implementation CLGSelectUserController
-@dynamic viewModel;
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.viewModel = [[CLGSelectUserViewModel alloc] init];
-}
+@dynamic logic;
 
 - (void)viewDidLoad
 {
-    NSAssert(self.viewModel, @"viewModel is not initialized");
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(@"Select user", nil);
+    self.title = NSLocalizedString(@"Select user", nil);
     self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Next", nil);
     
-    RAC(self.viewModel, name) = self.userNameTextfield.rac_textSignal;
-    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.viewModel, validName);
+    RAC(self.logic, name) = self.userNameTextfield.rac_textSignal;
+    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.logic, nameIsValid);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([[segue identifier] isEqualToString:kGoToImagePickerSegueIdentifier]){
-        CLGImagePickerViewModel *imgPickerViewModel = [[CLGImagePickerViewModel alloc] initWidthRequester:[CLGRequester sharedInstance]];
-        imgPickerViewModel.userName = self.viewModel.name;
-        ((CLGViewController *)[segue destinationViewController]).viewModel = imgPickerViewModel;
-    }
 }
 
 @end

@@ -10,35 +10,35 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 
-#import "CLGSelectUserViewModel.h"
+#import "CLGSelectUserLogic.h"
 
 SpecBegin(CLGSelectUserViewModel)
 
-__block CLGSelectUserViewModel *viewModel;
+__block CLGSelectUserLogic *viewModel;
 
 beforeEach(^{
-    viewModel = [[CLGSelectUserViewModel alloc] init];
+    viewModel = [[CLGSelectUserLogic alloc] init];
 });
 
 describe(@"CLGSelectUserViewModel", ^{
     it(@"name is to short", ^{
         viewModel.name = @"ol";
-        expect(viewModel.validName).to.equal(NO);
+        expect(viewModel.nameIsValid).to.equal(NO);
     });
     
     it(@"name is to long", ^{
         viewModel.name = @"olqwertyuiopansdfkrlartodnjfgtrmahetfgkddsdsdsfdfe";
-        expect(viewModel.validName).to.equal(NO);
+        expect(viewModel.nameIsValid).to.equal(NO);
     });
     
     it(@"name contains unallowed sumbols", ^{
         viewModel.name = @"qwerty 123";
-        expect(viewModel.validName).to.equal(NO);
+        expect(viewModel.nameIsValid).to.equal(NO);
     });
     
     it(@"name is correct", ^{
         viewModel.name = @"QweRty_123";
-        expect(viewModel.validName).to.equal(YES);
+        expect(viewModel.nameIsValid).to.equal(YES);
     });
 
 });

@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Denis Skokov. All rights reserved.
 //
 
-#import "CLGSelectUserViewModel.h"
+#import "CLGSelectUserLogic.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@implementation CLGSelectUserViewModel
+@implementation CLGSelectUserLogic
 
 - (id)init
 {
@@ -17,7 +17,7 @@
     if (self) {
         NSRegularExpression *regExt = [NSRegularExpression regularExpressionWithPattern:@"^[a-zA-Z0-9_]*$" options:0 error:nil];
 
-        RAC(self, validName) = [RACObserve(self, name) map:^id(NSString *value) {
+        RAC(self, nameIsValid) = [RACObserve(self, name) map:^id(NSString *value) {
             return @( (value.length > 3) && (value.length < 40) &&
             ([regExt firstMatchInString:value options:0 range:NSMakeRange(0, [value length])].range.length == value.length)
             );

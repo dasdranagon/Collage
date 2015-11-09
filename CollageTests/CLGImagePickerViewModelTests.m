@@ -12,16 +12,16 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <OCMock/OCMock.h>
 #import "CLGRequester.h"
-#import "CLGImagePickerViewModel.h"
+#import "CLGImagePickerLogic.h"
 
 SpecBegin(CLGImagePickerViewModel)
 
-__block CLGImagePickerViewModel *viewModel;
+__block CLGImagePickerLogic *viewModel;
 __block OCMockObject *requesterMoc;
 
 beforeEach(^{
     requesterMoc = [OCMockObject mockForClass:[CLGRequester class]];
-    viewModel = [[CLGImagePickerViewModel alloc] initWidthRequester:(CLGRequester *)requesterMoc];
+    viewModel = [[CLGImagePickerLogic alloc] initWidthRequester:(CLGRequester *)requesterMoc];
 });
 
 describe(@"CLGImagePickerViewModel", ^{

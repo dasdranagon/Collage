@@ -1,5 +1,5 @@
 //
-//  CLGViewModel.h
+//  CLGLogic.h
 //  Collage
 //
 //  Created by Denis Skokov on 06.08.14.
@@ -8,7 +8,13 @@
 
 #import <ReactiveViewModel/ReactiveViewModel.h>
 
-@interface CLGViewModel : RVMViewModel
+@class CLGSegue;
+
+@interface CLGLogic : RVMViewModel
+- (void)didLoad;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue;
+
+@property (nonatomic, strong) NSArray *segues;
 @property (nonatomic) BOOL processing;
 @property (nonatomic, strong) NSString *alert;
 @end

@@ -7,46 +7,43 @@
 //
 
 #import "CLGImagePickerController.h"
-#import "CLGImagePickerViewModel.h"
-#import "CLGCollageViewModel.h"
+#import "CLGImagePickerLogic.h"
+#import "CLGCollageLogic.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CLGImageCell.h"
 #import "IGMedia.h"
 #import "IGImage.h"
 
-static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen";
-
 @interface CLGImagePickerController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) CLGImagePickerViewModel *viewModel;
+@property (nonatomic, strong) CLGImagePickerLogic *logic;
 @end
 
 @implementation CLGImagePickerController
-@dynamic viewModel;
+@dynamic logic;
 
 - (void)viewDidLoad
 {
-    NSAssert(self.viewModel, @"viewModel not seted");
     [super viewDidLoad];
   
     self.navigationItem.title = NSLocalizedString(@"Select photos", nil);
     self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Collage", nil);
     
     @weakify(self);
-    [[RACObserve(self.viewModel, images) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+    [[RACObserve(self.logic, images) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self);
         [self.collectionView reloadData];
     }];
     
-    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.viewModel, canMakeCollage);
+    RAC(self.navigationItem.rightBarButtonItem, enabled) = RACObserve(self.logic, canMakeCollage);
 }
 
 #pragma mark -- UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.viewModel.images.count;
+    return self.logic.images.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -54,9 +51,9 @@ static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen"
     CLGImageCell *cell = (CLGImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CLGImageCell class])
                                                                            forIndexPath:indexPath];
     
-    IGMedia *media = self.viewModel.images[indexPath.row];
+    IGMedia *media = self.logic.images[indexPath.row];
     [cell configWithImage:media.thumbnail];
-    [cell setChecked:[self.viewModel.selectedIndexs containsIndex:indexPath.row]];
+    [cell setChecked:[self.logic.selectedIndexs containsIndex:indexPath.row]];
     return cell;
 }
 
@@ -69,17 +66,8 @@ static NSString * const kGoToCollageScreenSegueIdentifier = @"goToCollageScreen"
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.viewModel toggleIndex:indexPath.row];
+    [self.logic toggleIndex:indexPath.row];
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([[segue identifier] isEqualToString:kGoToCollageScreenSegueIdentifier]){
-        NSArray *images = [self.viewModel.images objectsAtIndexes:self.viewModel.selectedIndexs];
-        CLGCollageViewModel *collageViewModel = [[CLGCollageViewModel alloc] initWidthImages:images];
-        ((CLGViewController *)[segue destinationViewController]).viewModel = collageViewModel;
-    }
 }
 
 @end
